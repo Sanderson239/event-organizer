@@ -9,40 +9,40 @@ const { addDatabaseHooks } = require('./utils')
 
 suite('users seeds', addDatabaseHooks(() => {
   test('users rows', (done) => {
-    knex('users').orderBy('user_id', 'ASC')
+    knex('users').orderBy('id', 'ASC')
     .then((actual) => {
       const expected = [{
-        user_id: 1,
+        id: 1,
         name: 'Stephen Anderson',
         email: 'something@mail.com',
         image_url: 'http://placekitten.com/200/300',
       },
       {
-        user_id: 2,
+        id: 2,
         name: 'Lee',
         email: 'lee@mail.com',
         image_url: 'http://placekitten.com/200/300',
       },
       {
-        user_id: 3,
+        id: 3,
         name: 'Meghan',
         email: 'meghan@mail.com',
         image_url: 'http://placekitten.com/200/300',
       },
       {
-        user_id: 4,
+        id: 4,
         name: 'Will',
         email: 'will@mail.com',
         image_url: 'http://placekitten.com/200/300',
       },
       {
-        user_id: 5,
+        id: 5,
         name: 'Bell',
         email: 'bell@mail.com',
         image_url: 'http://placekitten.com/200/300',
       },
       {
-        user_id: 6,
+        id: 6,
         name: 'Thomas',
         email: 'thomas@mail.com',
         image_url: 'http://placekitten.com/200/300',
@@ -53,7 +53,7 @@ suite('users seeds', addDatabaseHooks(() => {
       assert.deepEqual(
         actual[i],
         expected[i],
-        `Row user_id=${i + 1} not the same`
+        `Row id=${i + 1} not the same`
       );
     }
 

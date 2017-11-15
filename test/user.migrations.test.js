@@ -12,11 +12,11 @@ suite( 'users migrations', addDatabaseHooks( () => {
     knex( 'users' ).columnInfo()
     .then( ( actual ) => {
       const expected = {
-        user_id: {
+        id: {
           type: 'integer',
           maxLength: null,
           nullable: false,
-          defaultValue: 'nextval(\'users_user_id_seq\'::regclass)'
+          defaultValue: 'nextval(\'users_id_seq\'::regclass)'
         },
 
         name: {
