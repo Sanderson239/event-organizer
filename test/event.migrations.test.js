@@ -30,23 +30,23 @@ suite( 'events migrations', addDatabaseHooks( () => {
           type: 'character varying',
           maxLength: 255,
           nullable: false,
-          defaultValue: null
+          defaultValue: '\'\'::character varying'
         },
 
         location: {
           type: 'character varying',
           maxLength: 255,
           nullable: false,
-          defaultValue: "'http://placekitten.com/200/300'::character varying"
+          defaultValue: '\'\'::character varying'
         },
 
         price: {
           type: 'integer',
           maxLength: null,
-          nullable: true,
-          defaultValue: null
+          nullable: false,
+          defaultValue: '0'
           },
-          
+
         image_url: {
           type: 'character varying',
           maxLength: 255,
