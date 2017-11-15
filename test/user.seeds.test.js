@@ -13,37 +13,37 @@ suite('users seeds', addDatabaseHooks(() => {
     .then((actual) => {
       const expected = [{
         user_id: 1,
-        name: 'Stephen Anderson'
+        name: 'Stephen Anderson',
         email: 'something@mail.com',
         image_url: 'http://placekitten.com/200/300',
       },
       {
         user_id: 2,
-        name: 'Lee'
+        name: 'Lee',
         email: 'lee@mail.com',
         image_url: 'http://placekitten.com/200/300',
       },
       {
         user_id: 3,
-        name: 'Meghan'
+        name: 'Meghan',
         email: 'meghan@mail.com',
         image_url: 'http://placekitten.com/200/300',
       },
       {
         user_id: 4,
-        name: 'Will'
+        name: 'Will',
         email: 'will@mail.com',
         image_url: 'http://placekitten.com/200/300',
       },
       {
         user_id: 5,
-        name: 'Bell'
+        name: 'Bell',
         email: 'bell@mail.com',
         image_url: 'http://placekitten.com/200/300',
       },
       {
         user_id: 6,
-        name: 'Thomas'
+        name: 'Thomas',
         email: 'thomas@mail.com',
         image_url: 'http://placekitten.com/200/300',
       },
