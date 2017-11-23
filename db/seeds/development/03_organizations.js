@@ -1,17 +1,8 @@
-'use strict';
 
-process.env.NODE_ENV = 'test';
-
-const assert = require('chai').assert;
-const { suite, test } = require('mocha');
-const knex = require('../knex');
-const { addDatabaseHooks } = require('./utils')
-
-suite('organizations seeds', addDatabaseHooks(() => {
-  test('organizations rows', (done) => {
-    knex('organizations').orderBy('id', 'ASC')
-    .then((actual) => {
-      const expected = [
+exports.seed = function(knex, Promise) {
+  return knex('organizations').del()
+    .then(function () {
+      return knex("organizations").insert([
         {
           id: 1,
           name: 'BBQ Fan Club',
@@ -30,20 +21,8 @@ suite('organizations seeds', addDatabaseHooks(() => {
           profile_image_url: 'http://placekitten.com/200/300',
           cover_image_url: 'http://placekitten.com/200/300',
         },
-    ];
-
-    for (let i = 0; i < expected.length; i++) {
-      assert.deepEqual(
-        actual[i],
-        expected[i],
-        `Row id=${i + 1} not the same`
-      );
-    }
-
-    done();
-  })
-  .catch((err) => {
-    done(err);
-  });
-});
-}));
+    ]).then( () => {
+        return knex.raw("SELECT setval('organizations_id_seq', (SELECT MAX(id) FROM organizations));");
+      });
+    });
+};
